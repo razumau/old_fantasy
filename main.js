@@ -5,7 +5,7 @@ var SHORT_TIMEOUT = 5000;
 var LONG_TIMEOUT = 10000;
 var rootRef = new Firebase("https://popping-inferno-4625.firebaseio.com");
 rootRef.onAuth(authCallback);
-var userRef = {};
+var userRef = null;
 
 var numbers = {
 	1: 'одной', 
@@ -148,13 +148,12 @@ function authCallback(authData) {
 					spent: 0
 				});
 			}
-
 			showMainScreen();
-
 		})
 
 	} else {
-		showLoginButtons();
+		if (!userRef)
+			showLoginButtons();
 	}
 }
 
@@ -289,19 +288,11 @@ function removeTeam(teamRow) {
 
 	userRef.once("value", function(snapshot) {
 		var user = snapshot.val();
-		var countRemoveTeams = 0;
 		user.teams = user.teams.filter(function(element) {
-			if (element.name === removedTeam.name) {
-				countRemoveTeams++;
-				return false;
-			} else {
-				return true;
-			}
+			return element.name !== removedTeam.name;
 		});
-		if (countRemoveTeams) {
-			user.remains += removedTeam.price;
-			user.spent -= removedTeam.price;
-		}
+		user.remains += removedTeam.price;
+		user.spent -= removedTeam.price;	
 		userRef.set(user);
 	});
 }
