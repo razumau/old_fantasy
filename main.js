@@ -299,5 +299,5 @@ function showNotEnoughPointsAlert (remains, price) {
 		+ price +
 		', возьмите команду послабее</div>');
 
-	window.setTimeout(hideAlerts, 4000);
+	window.setTimeout(hideAlerts, 10000);
 }
