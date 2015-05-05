@@ -3,6 +3,8 @@ body {
 	font-size: 16px !important;
 	line-height: 1.5;
 	font-variant: oldstyle-nums;
+	max-width: 100%;
+	overflow-x: hidden;
 	background-color: #80CBC4 !important;
 }
 

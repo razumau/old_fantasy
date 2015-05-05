@@ -143,7 +143,8 @@ $('body').on('click', '[data-action]', function() {
 });
 
 function updateBackground () {
-	$('#centerColumn').css('background-color', '#ffffff');
+	$('#centerColumn').css('background-color', '#ffffff')
+			.addClass('z-depth-4');
 	$('#userTeams').css('background-color', '#ffffff')
 			.css('min-height', '350px');
 
