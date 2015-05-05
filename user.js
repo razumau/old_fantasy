@@ -71,18 +71,43 @@ var UserBox = React.createClass({
 var actions = {
 	facebookLogin: function() {
 
-		rootRef.authWithOAuthPopup("facebook", function(error, authData) {}, {
+		rootRef.authWithOAuthPopup("facebook", function(error, authData) {
+			if (error) {
+				if (error.code === "TRANSPORT_UNAVAILABLE") {
+					rootRef.authWithOAuthRedirect("facebook", 
+						function (error, authData) {}, 
+						{
+							remember: "none",
+							scope: "public_profile"
+						});
+				}
+			}
+		}, {
 			remember: "none",
 			scope: "public_profile"
 		});
 	},
 
 	googleLogin: function() {
-		rootRef.authWithOAuthPopup("google", function(error, authData) {});
+		rootRef.authWithOAuthPopup("google", function(error, authData) {
+			if (error) {
+				if (error.code === "TRANSPORT_UNAVAILABLE") {
+					rootRef.authWithOAuthRedirect("google", 
+						function (error, authData) {} );
+				}
+			}
+		});
 	},
 
 	twitterLogin: function() {
-		rootRef.authWithOAuthPopup("twitter", function(error, authData) {});
+		rootRef.authWithOAuthPopup("twitter", function(error, authData) {
+			if (error) {
+				if (error.code === "TRANSPORT_UNAVAILABLE") {
+					rootRef.authWithOAuthRedirect("twitter", 
+						function (error, authData) {} );
+				}
+			}
+		});
 	}
 };
 

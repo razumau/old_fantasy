@@ -4,13 +4,6 @@ body {
 	line-height: 1.5;
 	font-variant: oldstyle-nums;
 	background-color: #80CBC4 !important;
-
-	/*font-feature-settings: 'onum';
-	-moz-font-feature-settings: 'onum=1';
-	-ms-font-feature-settings: 'onum';
-	font-feature-settings: "c2sc", "smcp";
-	-webkit-font-feature-settings: 'onum', "c2sc", "smcp";
-	-o-font-feature-settings: 'onum';*/
 }
 
 .row, #loginButtons {
