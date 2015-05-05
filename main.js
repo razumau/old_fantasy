@@ -1,6 +1,8 @@
 var $table = $('#allTeams');
 var allTeams = [];
 var MAX_TEAMS_PER_USER = 5;
+var SHORT_TIMEOUT = 5000;
+var LONG_TIMEOUT = 10000;
 var rootRef = new Firebase("https://popping-inferno-4625.firebaseio.com");
 rootRef.onAuth(authCallback);
 var userRef = {};
@@ -18,6 +20,11 @@ var numbers = {
 	10: 'десяти'
 };
 
+$('body').on('click', '[data-action]', function() {
+	var action = $(this).data('action');
+	if (action in actions) actions[action]();
+});
+
 var UserBox = React.createClass({
 	displayName: "UserBox",
 	mixins: [ReactFireMixin],
@@ -34,6 +41,16 @@ var UserBox = React.createClass({
 
 	render: function() {
 		var teams = [];
+		var userName = React.createElement("div", 
+					{ id: "userName" }, 
+					this.state.user.name, " ",
+					React.createElement("a", 
+							{ id: "logout", 
+								href: "#", 
+								"data-action": "logout"
+							}, "(выйти)")
+					);
+
 		if (this.state.user.teams) {
 			for (var i = 0; i < this.state.user.teams.length; i++) {
 				teams.push(React.createElement("span", 
@@ -46,14 +63,14 @@ var UserBox = React.createClass({
 			}
 
 			return (React.createElement("div", { className: "userBox" },
-				React.createElement("div", { id: "userName" }, this.state.user.name),
+				userName,
 				React.createElement("br", null),
 				React.createElement("div", {id: "remainingPoints"}, this.state.user.remains),
 				React.createElement("div", null, React.createElement("div", {className: "list-group"}, teams), " "
 			)));
 		} else {
 			return (React.createElement("div", { className: "userBox" },
-					React.createElement("div", { id: "userName" }, this.state.user.name),
+					userName,
 					React.createElement("br", null),
 					React.createElement("div", {id: "remainingPoints"}, this.state.user.remains),
 					React.createElement("p", null, "Не больше пяти команд."),
@@ -108,11 +125,17 @@ var actions = {
 				}
 			}
 		});
+	},
+
+	logout: function () {
+		rootRef.unauth();
+		location.reload();
 	}
 };
 
 function authCallback(authData) {
 	if (authData) {
+		hideLoginButtons();
 		userRef = rootRef.child("users").child(authData.uid);
 		userRef.once('value', function(snapshot) {
 			var user = snapshot.val();
@@ -126,21 +149,28 @@ function authCallback(authData) {
 				});
 			}
 
-			showTable();
-			hideLoginButtons();
-			updateBackground();
-			React.render(React.createElement(UserBox, null), document.getElementById('userTeams'));
+			showMainScreen();
+
 		})
 
 	} else {
-
+		showLoginButtons();
 	}
 }
 
-$('body').on('click', '[data-action]', function() {
-	var action = $(this).data('action');
-	if (action in actions) actions[action]();
-});
+function showMainScreen() {
+	showTable();
+	updateBackground();
+	React.render(React.createElement(UserBox, null), 
+			document.getElementById('userTeams'));
+}
+
+function showLoginScreen() {
+	
+	/*hideTable();
+	
+	React.unmountComponentAtNode(document.getElementById('userTeams'));*/
+}
 
 function updateBackground () {
 	$('#centerColumn').css('background-color', '#ffffff')
@@ -154,12 +184,19 @@ function hideLoginButtons() {
 	$('#loginButtons').css("display", "none");
 }
 
+function showLoginButtons() {
+	$('#loginButtons').css("display", "block");
+}
+
+function hideTable () {
+	$table.bootstrapTable('destroy');
+}
+
 function showTable() {
 	$table.bootstrapTable({
 		method: 'get',
 		url: 'https://popping-inferno-4625.firebaseio.com/teams.json',
 		cache: false,
-		//height: 600,
 		clickToSelect: true,
 		columns: [{
 			field: 'state',
@@ -179,14 +216,13 @@ function showTable() {
 			sortable: true
 		}, ]
 	}).on("check.bs.table", function(e, name, args) {
-		addTeam(name)
+		console.log('check.bs');
+		addTeam(name);
 	}).on("uncheck.bs.table", function(e, name, args) {
-		removeTeam(name)
+		removeTeam(name);
 	}).on("load-success.bs.table", function(e, data) {
 		highlightSelectedTeamsInTable();
 	});
-
-	$table.popover({animation: true});
 }
 
 
@@ -222,16 +258,22 @@ function addTeam(teamRow) {
 			user.teams = [];
 		if (user.teams.length === MAX_TEAMS_PER_USER) {
 			cancelAddingNewTeam(newTeam.index);
-			showMaxTeamsAlert();
+			showAlert('Нельзя брать больше ' 
+					+ numbers[MAX_TEAMS_PER_USER]
+					+ '&nbsp;команд', SHORT_TIMEOUT, true);
 		} else if (user.remains < newTeam.price) {
 			cancelAddingNewTeam(newTeam.index);
-			showNotEnoughPointsAlert(user.remains, newTeam.price);
+			showAlert('Осталось всего ' 
+					+ user.remains 
+					+ '&nbsp;очков. Это меньше '
+					+ newTeam.price
+					+ ', возьмите команду послабее', LONG_TIMEOUT, true);
 		} else {
 			user.teams.push(newTeam);
 			user.remains -= newTeam.price;
 			user.spent += newTeam.price;
 			userRef.set(user);
-			showRemainsAlert(teamRow.id, user.remains);
+			showAlert('Осталось ' + user.remains + '&nbsp;очков', SHORT_TIMEOUT);
 		}
 
 	})
@@ -247,11 +289,19 @@ function removeTeam(teamRow) {
 
 	userRef.once("value", function(snapshot) {
 		var user = snapshot.val();
+		var countRemoveTeams = 0;
 		user.teams = user.teams.filter(function(element) {
-			return element.name !== removedTeam.name
+			if (element.name === removedTeam.name) {
+				countRemoveTeams++;
+				return false;
+			} else {
+				return true;
+			}
 		});
-		user.remains += removedTeam.price;
-		user.spent -= removedTeam.price;
+		if (countRemoveTeams) {
+			user.remains += removedTeam.price;
+			user.spent -= removedTeam.price;
+		}
 		userRef.set(user);
 	});
 }
@@ -267,37 +317,31 @@ function cancelAddingNewTeam(index) {
 
 
 function hideAlerts () {
-	$('#remainsAlert').remove();
-	$('#maxTeamsAlert').remove();
-	$('#notEnoughPointsAlert').remove();
+	$('.alert').remove();
 }
 
-function showRemainsAlert (index, remains) {
+function showAlert (message, timeout, important) {
 	hideAlerts();
-	$('#centerColumn').append('<div id="remainsAlert" class="alert alert-dismissable"><button type="button" class="close" data-dismiss="alert">×</button>Осталось ' 
-		+ remains + 
-		'&nbsp;очков</div>');
+	if (important || !isInViewport($('#remainingPoints'))) {
+		$('#centerColumn').append('<div id="remainsAlert" class="alert alert-dismissable"><button type="button" class="close" data-dismiss="alert">×</button>'
+			+ message + '</div>');
 
-	window.setTimeout(hideAlerts, 4000);
+		window.setTimeout(hideAlerts, timeout);
+	}
 }
 
+function isInViewport (el) {
 
-function showMaxTeamsAlert () {
-	hideAlerts();
-	$('#centerColumn').append('<div id="maxTeamsAlert" class="alert alert-dismissable"><button type="button" class="close" data-dismiss="alert">×</button>Нельзя брать больше ' 
-		+ numbers[MAX_TEAMS_PER_USER] + 
-		'&nbsp;команд</div>');
+    if (typeof jQuery === "function" && el instanceof jQuery) {
+        el = el[0];
+    }
 
-	window.setTimeout(hideAlerts, 4000);
-}
+    var rect = el.getBoundingClientRect();
 
-function showNotEnoughPointsAlert (remains, price) {
-	hideAlerts();
-	$('#centerColumn').append('<div id="maxTeamsAlert" class="alert alert-dismissable"><button type="button" class="close" data-dismiss="alert">×</button>Осталось всего ' 
-		+ remains + 
-		'&nbsp;очков. Это меньше '
-		+ price +
-		', возьмите команду послабее</div>');
-
-	window.setTimeout(hideAlerts, 10000);
+    return (
+        rect.top >= 0 &&
+        rect.left >= 0 &&
+        rect.bottom <= (window.innerHeight || document.documentElement.clientHeight) && /*or $(window).height() */
+        rect.right <= (window.innerWidth || document.documentElement.clientWidth) /*or $(window).width() */
+    );
 }
