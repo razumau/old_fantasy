@@ -100,7 +100,7 @@ var actions = {
 				}
 			}
 		}, {
-			remember: "none",
+			remember: "default",
 			scope: "public_profile"
 		});
 	},
