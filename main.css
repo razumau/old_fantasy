@@ -12,6 +12,11 @@ body {
 	background-color: #80CBC4;
 }
 
+#container-fluid {
+	overflow-x: hidden;
+	width: 100%;
+}
+
 #logout {
 	font-size: 10px;
 	vertical-align: top;
