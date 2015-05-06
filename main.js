@@ -215,7 +215,6 @@ function showTable() {
 			sortable: true
 		}, ]
 	}).on("check.bs.table", function(e, name, args) {
-		console.log('check.bs');
 		addTeam(name);
 	}).on("uncheck.bs.table", function(e, name, args) {
 		removeTeam(name);
@@ -268,11 +267,13 @@ function addTeam(teamRow) {
 					+ newTeam.price
 					+ ', возьмите команду послабее', LONG_TIMEOUT, true);
 		} else {
-			user.teams.push(newTeam);
-			user.remains -= newTeam.price;
-			user.spent += newTeam.price;
-			userRef.set(user);
-			showAlert('Осталось ' + user.remains + '&nbsp;очков', SHORT_TIMEOUT);
+			if (!isAlreadySelected(user.teams, newTeam)) {
+				user.teams.push(newTeam);
+				user.remains -= newTeam.price;
+				user.spent += newTeam.price;
+				userRef.set(user);
+				showAlert('Осталось ' + user.remains + '&nbsp;очков', SHORT_TIMEOUT);
+			}
 		}
 
 	})
@@ -306,6 +307,13 @@ function cancelAddingNewTeam(index) {
 	})
 }
 
+function isAlreadySelected (teams, newTeam) {
+	for (var i = 0; i < teams.length; i++) {
+		if (teams[i].name === newTeam.name)
+			return true;
+	}
+	return false;
+}
 
 function hideAlerts () {
 	$('.alert').remove();
