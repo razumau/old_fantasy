@@ -7,38 +7,37 @@ $.getJSON("https://popping-inferno-4625.firebaseio.com/users.json", function (li
 			users.push({name: user.name, teams: user.teams});
 		}
 	}
-	React.render(<List users={users} />, document.getElementById('center'));
+	React.render(React.createElement(List, {users: users}), document.getElementById('center'));
 });
 
 
-var List = React.createClass({
+var List = React.createClass({displayName: "List",
 	render: function() {
 		var users = [];
 		this.props.users.forEach(function (user) {
-			users.push(<User user={user} />);
+			users.push(React.createElement(User, {user: user}));
 		});
 		shuffle(users);
-		console.log(users);
 		return (
-			<div className="list">
-			{users}
-			</div>
+			React.createElement("div", {className: "list"}, 
+			users
+			)
 		);
 	}
 	
 });
 
-var User = React.createClass({
+var User = React.createClass({displayName: "User",
 	render: function() {
 		var teams = [];
 		this.props.user.teams.forEach(function (team) {
-			teams.push(<p>{team.name}</p>);
+			teams.push(React.createElement("p", null, team.name));
 		});
 		return (
-			<div className="userTeams">
-				<h3> {this.props.user.name} </h3>
-				{teams}
-			</div>
+			React.createElement("div", {className: "userTeams"}, 
+				React.createElement("h3", null, " ", this.props.user.name, " "), 
+				teams
+			)
 		);
 	}
 });
