@@ -12,6 +12,23 @@ body {
 	background-color: #80CBC4;
 }
 
+#center {
+	background-color: white;
+}
+
+.list {
+	margin-left: 25px;
+	margin-top: 30px;
+}
+
+.userTeams {
+	margin-bottom: 30px;
+}
+
+.userTeams p {
+	margin-left: 30px;
+}
+
 #container-fluid {
 	overflow-x: hidden;
 	width: 100%;
