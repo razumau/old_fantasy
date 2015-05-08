@@ -66,22 +66,22 @@ var UserBox = React.createClass({
 				userName,
 				React.createElement("br", null),
 				React.createElement("div", {id: "remainingPoints"}, this.state.user.remains),
-				React.createElement("div", null, React.createElement("div", {className: "list-group"}, teams), " ")
-				React.createElement("div", {id:"selectionsLinkTeams"}, 
-						React.createElement("a", {href:"https://fantasy.razumau.net/selections", id: "selectionsLink"}, "Кого выбрали другие?"))
+				React.createElement("div", null, React.createElement("div", {className: "list-group"}, teams), " "),
+				React.createElement("div", {id:"selectionsLinkTeams"},
+					React.createElement("a", {href:"https://fantasy.razumau.net/selections", id: "selectionsLink"}, "Кого выбрали другие?"))
 				)
 			);
 		} else {
 			return (React.createElement("div", { className: "userBox" },
-					userName,
-					React.createElement("br", null),
-					React.createElement("div", {id: "remainingPoints"}, this.state.user.remains),
-					React.createElement("p", null, "Не больше пяти команд."),
-					React.createElement("p", null, "Результат — сумма ответов команд."),
-					React.createElement("p", null, "Изменения можно делать до 9 мая."),
-					React.createElement("div", {id:"selectionsLinkBlock"}, 
-						React.createElement("a", {href:"https://fantasy.razumau.net/selections", id: "selectionsLink"}, "Кого выбрали другие?"))
-					)
+				userName,
+				React.createElement("br", null),
+				React.createElement("div", {id: "remainingPoints"}, this.state.user.remains),
+				React.createElement("p", null, "Не больше пяти команд."),
+				React.createElement("p", null, "Результат — сумма ответов команд."),
+				React.createElement("p", null, "Изменения можно делать до 9 мая."),
+				React.createElement("div", {id:"selectionsLinkBlock"}, 
+					React.createElement("a", {href:"https://fantasy.razumau.net/selections", id: "selectionsLink"}, "Кого выбрали другие?"))
+				)
 				
 			);
 		}
