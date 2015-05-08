@@ -34,7 +34,7 @@ var User = React.createClass({displayName: "User",
 			teams.push(React.createElement("p", null, team.name));
 		});
 		return (
-			React.createElement("div", {className: "userTeams"}, 
+			React.createElement("a", {href="https://fantasy.razumau.net"}, "← к выбору команд", "div", {className: "userTeams"}, 
 				React.createElement("h3", null, " ", this.props.user.name, " "), 
 				teams
 			)
