@@ -66,8 +66,11 @@ var UserBox = React.createClass({
 				userName,
 				React.createElement("br", null),
 				React.createElement("div", {id: "remainingPoints"}, this.state.user.remains),
-				React.createElement("div", null, React.createElement("div", {className: "list-group"}, teams), " "
-			)));
+				React.createElement("div", null, React.createElement("div", {className: "list-group"}, teams), " ")
+				React.createElement("div", {id:"selectionsLinkTeams"}, 
+						React.createElement("a", {href:"https://fantasy.razumau.net/selections", id: "selectionsLink"}, "Кого выбрали другие?"))
+				)
+			);
 		} else {
 			return (React.createElement("div", { className: "userBox" },
 					userName,
