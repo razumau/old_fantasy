@@ -31,6 +31,19 @@ body {
 	color: #00796B;
 }
 
+#selectionsLink, #selectionsLink:visited  {
+	color: #00796B;	
+}
+
+#selectionsLinkRules {
+	margin-left: 10px;
+}
+
+#selectionsLinkTeams {
+	text-align: center;
+	margin-bottom: 10px;
+}
+
 .userTeams {
 	margin-bottom: 32px;
 }
