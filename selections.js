@@ -20,6 +20,7 @@ var List = React.createClass({displayName: "List",
 		shuffle(users);
 		return (
 			React.createElement("div", {className: "list"}, 
+			React.createElement("a", {href:"https://fantasy.razumau.net"}, "← к выбору команд"),
 			users
 			)
 		);
@@ -35,7 +36,6 @@ var User = React.createClass({displayName: "User",
 		});
 		return (
 			React.createElement("div", {className: "userTeams"}, 
-				React.createElement("a", {href:"https://fantasy.razumau.net"}, "← к выбору команд"),
 				React.createElement("h3", null, " ", this.props.user.name, " "), 
 				teams
 			)
