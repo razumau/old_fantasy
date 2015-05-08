@@ -18,15 +18,25 @@ body {
 
 .list {
 	margin-left: 25px;
-	margin-top: 30px;
+}
+
+.list a {
+	text-decoration: none;
+	color: #00796B;
+	font-size: 12px;
+	margin-left: -25px;
+}
+
+#logout:visited {
+	color: #00796B;
 }
 
 .userTeams {
-	margin-bottom: 30px;
+	margin-bottom: 32px;
 }
 
 .userTeams p {
-	margin-left: 30px;
+	margin-left: 32px;
 }
 
 #container-fluid {
