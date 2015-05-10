@@ -28,6 +28,10 @@ body {
 	margin-left: 27px;
 }
 
+.resultsList div:nth-child(n+10) {
+	margin-left: -14px;
+}
+
 .list a {
 	text-decoration: none;
 	color: #00796B;
