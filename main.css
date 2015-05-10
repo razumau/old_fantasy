@@ -20,6 +20,14 @@ body {
 	margin-left: 25px;
 }
 
+.resultsList {
+	margin-left: 15px;
+}
+
+.resultsList div:nth-child(-n+9) p {
+	margin-left: 27px;
+}
+
 .list a {
 	text-decoration: none;
 	color: #00796B;
@@ -44,12 +52,16 @@ body {
 	margin-bottom: 10px;
 }
 
-.userTeams {
+.userTeams, .resultsUserTeams {
 	margin-bottom: 32px;
 }
 
 .userTeams p {
 	margin-left: 32px;
+} 
+
+.resultsUserTeams p {
+	margin-left: 41px;
 }
 
 #container-fluid {
