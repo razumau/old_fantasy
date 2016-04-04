@@ -20,7 +20,7 @@ var List = React.createClass({displayName: "List",
 		shuffle(users);
 		return (
 			React.createElement("div", {className: "list"}, 
-			//React.createElement("a", {href:"https://fantasy.razumau.net"}, "← к выбору команд"),
+			React.createElement("a", {href:"https://fantasy.razumau.net"}, "← к выбору команд"),
 			users
 			)
 		);
@@ -46,5 +46,4 @@ var User = React.createClass({displayName: "User",
 function shuffle(o){
     for(var j, x, i = o.length; i; j = Math.floor(Math.random() * i), x = o[--i], o[i] = o[j], o[j] = x);
     return o;
-};
-
+}
