@@ -11,7 +11,6 @@ $.getJSON("https://popping-inferno-4625.firebaseio.com/teams.json", function (li
 		
 		snap.forEach(function (userSnap) {
 			var user = userSnap.val();
-			//var key = user.key();
 
 			if (user.teams) {
 				var ts = user.teams;
@@ -24,9 +23,7 @@ $.getJSON("https://popping-inferno-4625.firebaseio.com/teams.json", function (li
 				}
 			}
 			var userRef = userSnap.ref();
-			//console.log(userRef.child(key));
 			userRef.set(user);
-			//console.log(user);
 
 		})
 	})
