@@ -6,12 +6,15 @@ $.getJSON("https://popping-inferno-4625.firebaseio.com/users.json", function (li
 		if (user.remains < 100 && user.teams) {
 			user.teams.sort(function (a, b) {
 				return b.points - a.points;
-			})
-			var sum = 0;
+			});
+			var sum = 0, sum_price = 0;
 			for (var i = user.teams.length - 1; i >= 0; i--) {
 				sum += user.teams[i].points;
-			};
-			users.push({name: user.name, teams: user.teams, sum: sum});
+                sum_price += user.teams[i].price;
+			}
+            if (sum_price <= 100) {
+                users.push({name: user.name, teams: user.teams, sum: sum});
+            }
 		}
 	}
 	users.sort(function (a, b) {
@@ -27,7 +30,7 @@ var List = React.createClass({displayName: "List",
 		for (var i = 0; i < this.props.users.length; i++) {
 			this.props.users[i].place = i + 1;
 			users.push(React.createElement(User, {user: this.props.users[i]}));
-		};
+		}
 		return (
 			React.createElement("div", {className: "resultsList"}, 
 				users
@@ -57,7 +60,7 @@ var User = React.createClass({displayName: "User",
 });
 
 function shuffle(o){
-    for(var j, x, i = o.length; i; j = Math.floor(Math.random() * i), x = o[--i], o[i] = o[j], o[j] = x);
+    for (var j, x, i = o.length; i; j = Math.floor(Math.random() * i), x = o[--i], o[i] = o[j], o[j] = x);
     return o;
 };
 
