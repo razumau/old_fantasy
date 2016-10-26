@@ -78,7 +78,7 @@ var UserBox = React.createClass({
 				React.createElement("div", {id: "remainingPoints"}, this.state.user.remains),
 				React.createElement("p", null, "Не больше пяти команд."),
 				React.createElement("p", null, "Результат — сумма ответов команд."),
-				React.createElement("p", null, "Изменения можно делать до 7 мая."),
+				React.createElement("p", null, "Изменения можно делать до 28 октября."),
 				React.createElement("div", {id:"selectionsLinkRules"}, 
 					React.createElement("a", {href:"https://fantasy.razumau.net/selections", id: "selectionsLink"}, "Кого выбрали другие?"))
 				)
