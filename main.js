@@ -150,7 +150,7 @@ function authCallback(authData) {
 				userRef.set({
 					provider: authData.provider,
 					name: authData[authData.provider].displayName,
-					remains: 100,
+					remains: 150,
 					spent: 0
 				});
 			}

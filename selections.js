@@ -3,7 +3,7 @@ var users = [];
 $.getJSON("https://popping-inferno-4625.firebaseio.com/users.json", function (list) {
 	for (var key in list) {
 		var user = list[key];
-		if (user.remains < 100 && user.teams) {
+		if (user.remains < 150 && user.teams) {
 			users.push({name: user.name, teams: user.teams});
 		}
 	}
