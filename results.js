@@ -46,7 +46,8 @@ var User = React.createClass({
     render: function () {
         var teams = [];
         this.props.user.teams.forEach(function (team) {
-            teams.push(React.createElement("p", null, team.name, " — ", team.points));
+            var str = [team.name, " — ", team.points, " (", team.price, ")"].join('');
+            teams.push(React.createElement("p", null, str));
         });
         return (
             React.createElement("div", {className: "resultsUserTeams"},
