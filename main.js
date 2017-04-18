@@ -1,6 +1,6 @@
 var $table = $('#allTeams');
 var allTeams = [];
-var MAX_TEAMS_PER_USER = 5;
+var MAX_TEAMS_PER_USER = 6;
 var SHORT_TIMEOUT = 5000;
 var LONG_TIMEOUT = 10000;
 var rootRef = new Firebase("https://popping-inferno-4625.firebaseio.com");
