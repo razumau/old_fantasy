@@ -1,9 +1,10 @@
 var users = [];
+var MAX_POINTS = 100;
 
 $.getJSON("https://popping-inferno-4625.firebaseio.com/users-schrb.json", function (list) {
 	for (var key in list) {
 		var user = list[key];
-		if (user.remains < 150 && user.teams) {
+		if (user.remains < MAX_POINTS && user.teams) {
 			users.push({name: user.name, teams: user.teams});
 		}
 	}

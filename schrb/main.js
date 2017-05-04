@@ -3,6 +3,7 @@ var allTeams = [];
 var MAX_TEAMS_PER_USER = 6;
 var SHORT_TIMEOUT = 5000;
 var LONG_TIMEOUT = 10000;
+var MAX_POINTS = 100;
 var rootRef = new Firebase("https://popping-inferno-4625.firebaseio.com");
 rootRef.onAuth(authCallback);
 var userRef = null;
@@ -76,9 +77,9 @@ var UserBox = React.createClass({
 				userName,
 				React.createElement("br", null),
 				React.createElement("div", {id: "remainingPoints"}, this.state.user.remains),
-				React.createElement("p", null, "Не больше шести команд."),
+				React.createElement("p", null, "Не больше четырёх команд."),
 				React.createElement("p", null, "Результат — сумма ответов команд."),
-				React.createElement("p", null, "Изменения можно делать до 21 апреля."),
+				React.createElement("p", null, "Изменения можно делать до 6 мая."),
 				React.createElement("div", {id:"selectionsLinkRules"}, 
 					React.createElement("a", {href:"https://fantasy.razumau.net/selections", id: "selectionsLink"}, "Кого выбрали другие?"))
 				)
@@ -150,7 +151,7 @@ function authCallback(authData) {
 				userRef.set({
 					provider: authData.provider,
 					name: authData[authData.provider].displayName,
-					remains: 150,
+					remains: MAX_POINTS,
 					spent: 0
 				});
 			}
@@ -273,7 +274,7 @@ function addTeam(teamRow) {
 					+ newTeam.price
 					+ ', возьмите команду послабее', LONG_TIMEOUT, true);
 		} else {
-			if (!isAlreadySelected(user.teams, newTeam)) {
+			if (!isAlreadySelected(user.teams, newTeam) && user.remains >= newTeam.price) {
 				user.teams.push(newTeam);
 				user.remains -= newTeam.price;
 				user.spent += newTeam.price;

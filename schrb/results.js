@@ -1,9 +1,10 @@
 var users = [];
+var MAX_POINTS = 100;
 
 $.getJSON("https://popping-inferno-4625.firebaseio.com/users-schrb.json", function (list) {
     for (var key in list) {
         var user = list[key];
-        if (user.remains < 150 && user.teams) {
+        if (user.remains < MAX_POINTS && user.teams) {
             user.teams.sort(function (a, b) {
                 return b.points - a.points;
             });
@@ -12,7 +13,7 @@ $.getJSON("https://popping-inferno-4625.firebaseio.com/users-schrb.json", functi
                 sum += user.teams[i].points;
                 sum_price += user.teams[i].price;
             }
-            if (sum_price <= 150) {
+            if (sum_price <= MAX_POINTS) {
                 users.push({name: user.name, teams: user.teams, sum: sum});
             }
         }
