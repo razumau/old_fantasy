@@ -21,7 +21,7 @@ var List = React.createClass({displayName: "List",
 		shuffle(users);
 		return (
 			React.createElement("div", {className: "list"}, 
-			React.createElement("a", {href:"../"}, "← к выбору команд"),
+			React.createElement("a", {href:"./"}, "← к выбору команд"),
 			users
 			)
 		);
