@@ -1,8 +1,8 @@
-var users = new Firebase("https://popping-inferno-4625.firebaseio.com/users");
+var users = new Firebase("https://popping-inferno-4625.firebaseio.com/users-chr");
 
 var teams = {};
 
-$.getJSON("https://popping-inferno-4625.firebaseio.com/teams.json", function (list) {
+$.getJSON("https://popping-inferno-4625.firebaseio.com/teams-chr.json", function (list) {
 	for (var key in list) {
 		var t = list[key];
 		teams[t.name] = {name: t.name, index: t.id, points: t.points, price: t.price};

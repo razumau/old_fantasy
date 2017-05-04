@@ -1,9 +1,10 @@
 var users = [];
+var MAX_POINTS = 200;
 
-$.getJSON("https://popping-inferno-4625.firebaseio.com/users.json", function (list) {
+$.getJSON("https://popping-inferno-4625.firebaseio.com/users-chr.json", function (list) {
 	for (var key in list) {
 		var user = list[key];
-		if (user.remains < 150 && user.teams) {
+		if (user.remains < MAX_POINTS && user.teams) {
 			users.push({name: user.name, teams: user.teams});
 		}
 	}
@@ -20,7 +21,7 @@ var List = React.createClass({displayName: "List",
 		shuffle(users);
 		return (
 			React.createElement("div", {className: "list"}, 
-			React.createElement("a", {href:"https://fantasy.razumau.net"}, "← к выбору команд"),
+			React.createElement("a", {href:"./"}, "← к выбору команд"),
 			users
 			)
 		);
