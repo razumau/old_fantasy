@@ -295,12 +295,15 @@ function removeTeam(teamRow) {
 
 	userRef.once("value", function(snapshot) {
 		var user = snapshot.val();
-		user.teams = user.teams.filter(function(element) {
-			return element.name !== removedTeam.name;
-		});
-		user.remains += removedTeam.price;
-		user.spent -= removedTeam.price;	
-		userRef.set(user);
+        var filtered = user.teams.filter(function(element) {
+            return element.name !== removedTeam.name;
+        });
+        if (user.teams.length !== filtered.length) {
+            user.teams = filtered;
+            user.remains += removedTeam.price;
+            user.spent -= removedTeam.price;
+            userRef.set(user);
+        }
 	});
 }
 

@@ -1,4 +1,6 @@
 .idea/*
 *.sublime-project
-
+_site
+schrb/_site
+chr/_site
 *.sublime-workspace
