@@ -1,0 +1,233 @@
+body {
+	font-family: 'Lato', sans-serif !important;
+	font-size: 16px !important;
+	line-height: 1.5;
+	font-variant: oldstyle-nums;
+	max-width: 100%;
+	overflow-x: hidden;
+	background-color: #80CBC4 !important;
+}
+
+.row, #loginButtons {
+	background-color: #80CBC4;
+}
+
+#center {
+	background-color: white;
+}
+
+.list {
+	margin-left: 25px;
+}
+
+.resultsList {
+	margin-left: 15px;
+}
+
+.resultsList div:nth-child(-n+9) p {
+	margin-left: 27px;
+}
+
+.resultsList div:nth-child(n+10) {
+	margin-left: -14px;
+}
+
+.list a {
+	text-decoration: none;
+	color: #00796B;
+	font-size: 12px;
+	margin-left: -25px;
+}
+
+#logout:visited {
+	color: #00796B;
+}
+
+#selectionsLink, #selectionsLink:visited  {
+	color: #00796B;	
+}
+
+#selectionsLinkRules {
+	margin-left: 10px;
+}
+
+#selectionsLinkTeams {
+	text-align: center;
+	margin-bottom: 10px;
+}
+
+.userTeams, .resultsUserTeams {
+	margin-bottom: 32px;
+}
+
+.userTeams p {
+	margin-left: 32px;
+} 
+
+.resultsUserTeams p {
+	margin-left: 41px;
+}
+
+#container-fluid {
+	overflow-x: hidden;
+	width: 100%;
+}
+
+#logout {
+	font-size: 10px;
+	vertical-align: top;
+	color: #00796B;
+}
+
+#logout:visited {
+	color: #00796B;
+}
+
+#loginButtons {
+	display: none;
+}
+
+#remainingPoints, .list-group {
+	margin-left: 10px;
+}
+
+.list-group {
+	margin-bottom: 10px;
+}
+
+.userBox p {
+	margin-left: 10px;
+}
+
+.alert {
+	position: fixed;
+	top: 0;
+	text-align: center;
+	z-index: 100;
+	box-shadow: none;
+	color: white;
+	-webkit-box-shadow: none;
+	border: none;
+	background-color: rgba(0, 105, 92, 0.7);
+}
+
+#remainingPoints {
+	font-size: 36px;
+	text-align: center;
+	margin-bottom: 12px;
+	margin-top: 12px;
+}
+
+#userName  {
+	margin-left: 10px;
+	margin-right: 0px;
+	margin-top: 5px;
+	float: right;
+}
+
+#loginButtons {
+	text-align: center;
+}
+
+td.bs-checkbox {
+	vertical-align: middle !important;
+}
+
+.badge {
+	background-color: #00796B;
+	border-radius: 0;
+	font-size: 14px;
+	padding: 7px 7px;
+}
+
+#loginButtons h3 {
+	font-variant: small-caps;
+}
+
+.bootstrap-table {
+	margin-top: 15px;
+	margin-left: 5px;
+	margin-right: 5px;
+	margin-bottom: 5px;
+	cursor: default;
+	-webkit-touch-callout: none;
+    	-webkit-user-select: none;
+	-khtml-user-select: none;
+	-moz-user-select: none;
+	-ms-user-select: none;
+    	user-select: none;
+}
+
+
+.btn-default:focus, .btn-default:hover {
+  background-color: #B2DFDB !important;
+  background-image: linear-gradient(to bottom,#fff 0,#B2DFDB 100%) !important;
+}
+
+button.login {
+	width: 220px;
+	margin-top: 15px;
+	
+}
+
+@font-face {
+    font-family: 'Lato';
+    src: url('./fonts/Lato-Regular.eot'); /* IE9 Compat Modes */
+    src: url('./fonts/Lato-Regular.eot?#iefix') format('embedded-opentype'), /* IE6-IE8 */
+         url('./fonts/Lato-Regular.woff') format('woff'), /* Modern Browsers */
+         url('./fonts/Lato-Regular.ttf') format('truetype'); 
+    font-style: normal;
+    font-weight: normal;
+    font-variant-numeric: oldstyle-nums;
+    text-rendering: optimizeLegibility;
+}
+
+@font-face {
+    font-family: 'LatoSemibold';
+    src: url('./fonts/Lato-SemiboldItalic.eot'); /* IE9 Compat Modes */
+    src: url('./fonts/Lato-SemiboldItalic.eot?#iefix') format('embedded-opentype'), /* IE6-IE8 */
+         url('./fonts/Lato-SemiboldItalic.woff') format('woff'), /* Modern Browsers */
+         url('./fonts/Lato-SemiboldItalic.ttf') format('truetype'); 
+    font-style: italic;
+    font-weight: normal;
+    text-rendering: optimizeLegibility;
+}
+
+@font-face {
+    font-family: 'LatoSemibold';
+    src: url('./fonts/Lato-Semibold.eot'); /* IE9 Compat Modes */
+    src: url('./fonts/Lato-Semibold.eot?#iefix') format('embedded-opentype'), /* IE6-IE8 */
+         url('./fonts/Lato-Semibold.woff') format('woff'), /* Modern Browsers */
+         url('./fonts/Lato-Semibold.ttf') format('truetype'); 
+    font-style: normal;
+    font-weight: normal;
+    text-rendering: optimizeLegibility;
+}
+
+@font-face {
+    font-family: 'Lato';
+    src: url('./fonts/Lato-Italic.eot'); /* IE9 Compat Modes */
+    src: url('./fonts/Lato-Italic.eot?#iefix') format('embedded-opentype'), /* IE6-IE8 */
+         url('./fonts/Lato-Italic.woff') format('woff'), /* Modern Browsers */
+         url('./fonts/Lato-Italic.ttf') format('truetype'); 
+    font-style: italic;
+    font-weight: normal;
+    text-rendering: optimizeLegibility;
+}
+
+th.bs-checkbox > div.th-inner > input[name="btSelectAll"] {
+	visibility: hidden;
+}
+
+.z-depth-4 {
+    -webkit-box-shadow: 0 16px 28px 0 rgba(0, 0, 0, 0.22), 0 25px 55px 0 rgba(0, 0, 0, 0.21);
+    -moz-box-shadow: 0 16px 28px 0 rgba(0, 0, 0, 0.22), 0 25px 55px 0 rgba(0, 0, 0, 0.21);
+    box-shadow: 0 16px 28px 0 rgba(0, 0, 0, 0.22), 0 25px 55px 0 rgba(0, 0, 0, 0.21);
+}
+
+
+
+
+
+
+
