@@ -44,7 +44,7 @@ body {
 }
 
 #selectionsLink, #selectionsLink:visited  {
-	color: #00796B;	
+	color: #00796B;
 }
 
 #selectionsLinkRules {
@@ -62,7 +62,7 @@ body {
 
 .userTeams p {
 	margin-left: 32px;
-} 
+}
 
 .resultsUserTeams p {
 	margin-left: 41px;
@@ -151,68 +151,68 @@ td.bs-checkbox {
 	margin-bottom: 5px;
 	cursor: default;
 	-webkit-touch-callout: none;
-    	-webkit-user-select: none;
+	-webkit-user-select: none;
 	-khtml-user-select: none;
 	-moz-user-select: none;
 	-ms-user-select: none;
-    	user-select: none;
+	user-select: none;
 }
 
 
 .btn-default:focus, .btn-default:hover {
-  background-color: #B2DFDB !important;
-  background-image: linear-gradient(to bottom,#fff 0,#B2DFDB 100%) !important;
+	background-color: #B2DFDB !important;
+	background-image: linear-gradient(to bottom,#fff 0,#B2DFDB 100%) !important;
 }
 
 button.login {
 	width: 220px;
 	margin-top: 15px;
-	
+
 }
 
 @font-face {
-    font-family: 'Lato';
-    src: url('http://fantasy.razumau.net/fonts/Lato-Regular.eot'); /* IE9 Compat Modes */
-    src: url('http://fantasy.razumau.net/fonts/Lato-Regular.eot?#iefix') format('embedded-opentype'), /* IE6-IE8 */
-         url('http://fantasy.razumau.net/fonts/Lato-Regular.woff') format('woff'), /* Modern Browsers */
-         url('http://fantasy.razumau.net/fonts/Lato-Regular.ttf') format('truetype'); 
-    font-style: normal;
-    font-weight: normal;
-    font-variant-numeric: oldstyle-nums;
-    text-rendering: optimizeLegibility;
+	font-family: 'Lato';
+	src: url('https://fantasy.razumau.net/fonts/Lato-Regular.eot'); /* IE9 Compat Modes */
+	src: url('https://fantasy.razumau.net/fonts/Lato-Regular.eot?#iefix') format('embedded-opentype'), /* IE6-IE8 */
+	url('https://fantasy.razumau.net/fonts/Lato-Regular.woff') format('woff'), /* Modern Browsers */
+	url('https://fantasy.razumau.net/fonts/Lato-Regular.ttf') format('truetype');
+	font-style: normal;
+	font-weight: normal;
+	font-variant-numeric: oldstyle-nums;
+	text-rendering: optimizeLegibility;
 }
 
 @font-face {
-    font-family: 'LatoSemibold';
-    src: url('http://fantasy.razumau.net/fonts/Lato-SemiboldItalic.eot'); /* IE9 Compat Modes */
-    src: url('http://fantasy.razumau.net/fonts/Lato-SemiboldItalic.eot?#iefix') format('embedded-opentype'), /* IE6-IE8 */
-         url('http://fantasy.razumau.net/fonts/Lato-SemiboldItalic.woff') format('woff'), /* Modern Browsers */
-         url('http://fantasy.razumau.net/fonts/Lato-SemiboldItalic.ttf') format('truetype'); 
-    font-style: italic;
-    font-weight: normal;
-    text-rendering: optimizeLegibility;
+	font-family: 'LatoSemibold';
+	src: url('https://fantasy.razumau.net/fonts/Lato-SemiboldItalic.eot'); /* IE9 Compat Modes */
+	src: url('https://fantasy.razumau.net/fonts/Lato-SemiboldItalic.eot?#iefix') format('embedded-opentype'), /* IE6-IE8 */
+	url('https://fantasy.razumau.net/fonts/Lato-SemiboldItalic.woff') format('woff'), /* Modern Browsers */
+	url('https://fantasy.razumau.net/fonts/Lato-SemiboldItalic.ttf') format('truetype');
+	font-style: italic;
+	font-weight: normal;
+	text-rendering: optimizeLegibility;
 }
 
 @font-face {
-    font-family: 'LatoSemibold';
-    src: url('http://fantasy.razumau.net/fonts/Lato-Semibold.eot'); /* IE9 Compat Modes */
-    src: url('http://fantasy.razumau.net/fonts/Lato-Semibold.eot?#iefix') format('embedded-opentype'), /* IE6-IE8 */
-         url('http://fantasy.razumau.net/fonts/Lato-Semibold.woff') format('woff'), /* Modern Browsers */
-         url('http://fantasy.razumau.net/fonts/Lato-Semibold.ttf') format('truetype'); 
-    font-style: normal;
-    font-weight: normal;
-    text-rendering: optimizeLegibility;
+	font-family: 'LatoSemibold';
+	src: url('https://fantasy.razumau.net/fonts/Lato-Semibold.eot'); /* IE9 Compat Modes */
+	src: url('https://fantasy.razumau.net/fonts/Lato-Semibold.eot?#iefix') format('embedded-opentype'), /* IE6-IE8 */
+	url('https://fantasy.razumau.net/fonts/Lato-Semibold.woff') format('woff'), /* Modern Browsers */
+	url('https://fantasy.razumau.net/fonts/Lato-Semibold.ttf') format('truetype');
+	font-style: normal;
+	font-weight: normal;
+	text-rendering: optimizeLegibility;
 }
 
 @font-face {
-    font-family: 'Lato';
-    src: url('http://fantasy.razumau.net/fonts/Lato-Italic.eot'); /* IE9 Compat Modes */
-    src: url('http://fantasy.razumau.net/fonts/Lato-Italic.eot?#iefix') format('embedded-opentype'), /* IE6-IE8 */
-         url('http://fantasy.razumau.net/fonts/Lato-Italic.woff') format('woff'), /* Modern Browsers */
-         url('http://fantasy.razumau.net/fonts/Lato-Italic.ttf') format('truetype'); 
-    font-style: italic;
-    font-weight: normal;
-    text-rendering: optimizeLegibility;
+	font-family: 'Lato';
+	src: url('//fantasy.razumau.net/fonts/Lato-Italic.eot'); /* IE9 Compat Modes */
+	src: url('//fantasy.razumau.net/fonts/Lato-Italic.eot?#iefix') format('embedded-opentype'), /* IE6-IE8 */
+	url('//fantasy.razumau.net/fonts/Lato-Italic.woff') format('woff'), /* Modern Browsers */
+	url('//fantasy.razumau.net/fonts/Lato-Italic.ttf') format('truetype');
+	font-style: italic;
+	font-weight: normal;
+	text-rendering: optimizeLegibility;
 }
 
 th.bs-checkbox > div.th-inner > input[name="btSelectAll"] {
@@ -220,9 +220,9 @@ th.bs-checkbox > div.th-inner > input[name="btSelectAll"] {
 }
 
 .z-depth-4 {
-    -webkit-box-shadow: 0 16px 28px 0 rgba(0, 0, 0, 0.22), 0 25px 55px 0 rgba(0, 0, 0, 0.21);
-    -moz-box-shadow: 0 16px 28px 0 rgba(0, 0, 0, 0.22), 0 25px 55px 0 rgba(0, 0, 0, 0.21);
-    box-shadow: 0 16px 28px 0 rgba(0, 0, 0, 0.22), 0 25px 55px 0 rgba(0, 0, 0, 0.21);
+	-webkit-box-shadow: 0 16px 28px 0 rgba(0, 0, 0, 0.22), 0 25px 55px 0 rgba(0, 0, 0, 0.21);
+	-moz-box-shadow: 0 16px 28px 0 rgba(0, 0, 0, 0.22), 0 25px 55px 0 rgba(0, 0, 0, 0.21);
+	box-shadow: 0 16px 28px 0 rgba(0, 0, 0, 0.22), 0 25px 55px 0 rgba(0, 0, 0, 0.21);
 }
 
 
