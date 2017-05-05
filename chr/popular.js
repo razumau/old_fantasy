@@ -1,9 +1,8 @@
 var result = [];
-var MAX_POINTS = 100;
 
-$.getJSON("https://popping-inferno-4625.firebaseio.com/users-schrb.json")
+$.getJSON("https://popping-inferno-4625.firebaseio.com/users-chr.json")
     .then(function (users) {
-        $.getJSON("https://popping-inferno-4625.firebaseio.com/teams-schrb.json", function (teams) {
+        $.getJSON("https://popping-inferno-4625.firebaseio.com/teams-chr.json", function (teams) {
             var teams_counter = {};
             var users_count = 0;
 
@@ -12,13 +11,18 @@ $.getJSON("https://popping-inferno-4625.firebaseio.com/users-schrb.json")
             }
 
             for (var key in users) {
+                // debugger;
                 var user = users[key];
                 if (user.teams && user.teams.length > 0) {
                     users_count += 1;
                     user.teams.forEach(function (team) {
+                        // debugger;
                         teams_counter[team.name] += 1;
                     });
+
                 }
+
+
             }
 
             for (key in teams) {
