@@ -236,15 +236,20 @@ function highlightSelectedTeamsInTable() {
 		if (!teams)
 			return;
 		teams.forEach(function(element) {
+			var index = -1;
+            $table.data()["bootstrap.table"].data.forEach(function (elem, ind) {
+				if (elem.name === element.name) {
+					index = ind;
+				}
+            });
 			$table.bootstrapTable('updateRow', {
-				index: element.index,
+				index: index,
 				row: {
 					state: true
 				}
 			})
 		})
 	});
-
 }
 
 function addTeam(teamRow) {

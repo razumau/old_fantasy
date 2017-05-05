@@ -232,20 +232,25 @@ function showTable() {
 
 
 function highlightSelectedTeamsInTable() {
-	userRef.once("value", function(snapshot) {
-		var teams = snapshot.val().teams;
-		if (!teams)
-			return;
-		teams.forEach(function(element) {
-			$table.bootstrapTable('updateRow', {
-				index: element.index,
-				row: {
-					state: true
-				}
-			})
-		})
-	});
-
+    userRef.once("value", function(snapshot) {
+        var teams = snapshot.val().teams;
+        if (!teams)
+            return;
+        teams.forEach(function(element) {
+            var index = -1;
+            $table.data()["bootstrap.table"].data.forEach(function (elem, ind) {
+                if (elem.name === element.name) {
+                    index = ind;
+                }
+            });
+            $table.bootstrapTable('updateRow', {
+                index: index,
+                row: {
+                    state: true
+                }
+            })
+        })
+    });
 }
 
 function addTeam(teamRow) {
