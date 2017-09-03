@@ -1,5 +1,5 @@
 var users = [];
-var MAX_POINTS = 150;
+var MAX_POINTS = 175;
 
 $.getJSON("https://popping-inferno-4625.firebaseio.com/users-ke.json", function (list) {
 	for (var key in list) {
