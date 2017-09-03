@@ -1,8 +1,8 @@
 var $table = $('#allTeams');
-var MAX_TEAMS_PER_USER = 4;
+var MAX_TEAMS_PER_USER = 5;
 var SHORT_TIMEOUT = 5000;
 var LONG_TIMEOUT = 10000;
-var MAX_POINTS = 150;
+var MAX_POINTS = 175;
 var rootRef = new Firebase("https://popping-inferno-4625.firebaseio.com");
 rootRef.onAuth(authCallback);
 var userRef = null;
@@ -76,7 +76,7 @@ var UserBox = React.createClass({
 				userName,
 				React.createElement("br", null),
 				React.createElement("div", {id: "remainingPoints"}, this.state.user.remains),
-				React.createElement("p", null, "Не больше четырёх команд."),
+				React.createElement("p", null, "Не больше пяти команд."),
 				React.createElement("p", null, "Результат — сумма ответов команд."),
 				React.createElement("p", null, "Изменения можно делать до 7 сентября."),
 				React.createElement("div", {id:"selectionsLinkRules"}, 
