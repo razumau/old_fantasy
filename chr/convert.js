@@ -26,6 +26,7 @@ $.getJSON("https://popping-inferno-4625.firebaseio.com/teams-chr.json", function
 			userRef.set(user);
 
 		})
-	})
+	});
+	console.log('converted')
 });
 

@@ -25,7 +25,8 @@ $.getJSON("https://popping-inferno-4625.firebaseio.com/teams-schrb.json", functi
 			var userRef = userSnap.ref();
 			userRef.set(user);
 
-		})
+		});
+		alert('done')
 	})
 });
 
