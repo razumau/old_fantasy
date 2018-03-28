@@ -215,7 +215,7 @@ function showTable() {
 			sortable: true
 		}, {
 			field: 'name',
-			title: 'Команда',
+			title: 'Игрок',
 			align: 'left',
 			valign: 'middle',
 			sortable: true
@@ -269,14 +269,14 @@ function addTeam(teamRow) {
 			cancelAddingNewTeam(newTeam.index);
 			showAlert('Нельзя брать больше ' 
 					+ numbers[MAX_TEAMS_PER_USER]
-					+ '&nbsp;команд', SHORT_TIMEOUT, true);
+					+ '&nbsp;игроков', SHORT_TIMEOUT, true);
 		} else if (user.remains < newTeam.price) {
 			cancelAddingNewTeam(newTeam.index);
 			showAlert('Осталось всего ' 
 					+ user.remains 
 					+ '&nbsp;очков. Это меньше '
 					+ newTeam.price
-					+ ', возьмите команду послабее', LONG_TIMEOUT, true);
+					+ ', возьмите игрока послабее', LONG_TIMEOUT, true);
 		} else {
 			if (!isAlreadySelected(user.teams, newTeam) && user.remains >= newTeam.price) {
 				user.teams.push(newTeam);
