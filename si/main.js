@@ -68,7 +68,7 @@ var UserBox = React.createClass({
 				React.createElement("div", {id: "remainingPoints"}, this.state.user.remains),
 				React.createElement("div", null, React.createElement("div", {className: "list-group"}, teams), " "),
 				React.createElement("div", {id:"selectionsLinkTeams"},
-					React.createElement("a", {href:"https://fantasy.razumau.net/si/selections", id: "selectionsLink"}, "Кого выбрали другие?"))
+					React.createElement("a", {href:"https://fantasy.razumau.net/si/results", id: "selectionsLink"}, "Кого выбрали другие?"))
 				)
 			);
 		} else {
@@ -80,7 +80,7 @@ var UserBox = React.createClass({
 				React.createElement("p", null, "5-5-3-3 в первом бою, 8-6-4-2 в верхней сетке, 4-3-2-1 в нижней, 10-7-5-2 в финале."),
 				React.createElement("p", null, "Изменения можно делать до 11:00 31 марта."),
 				React.createElement("div", {id:"selectionsLinkRules"}, 
-					React.createElement("a", {href:"https://fantasy.razumau.net/si/selections", id: "selectionsLink"}, "Кого выбрали другие?"))
+					React.createElement("a", {href:"https://fantasy.razumau.net/si/results", id: "selectionsLink"}, "Кого выбрали другие?"))
 				)
 				
 			);
