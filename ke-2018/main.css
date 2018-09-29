@@ -95,6 +95,10 @@ body {
 	margin-bottom: 10px;
 }
 
+.list-group-item {
+	padding-right: 15px;
+}
+
 .userBox p {
 	margin-left: 10px;
 }
