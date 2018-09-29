@@ -1,4 +1,4 @@
-var users = new Firebase("https://popping-inferno-4625.firebaseio.com/users-ke");
+var users = new Firebase("https://popping-inferno-4625.firebaseio.com/users-ke-2018");
 
 var teams = {};
 
