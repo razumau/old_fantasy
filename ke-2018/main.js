@@ -142,10 +142,10 @@ var actions = {
 function authCallback(authData) {
 	if (authData) {
 		hideLoginButtons();
-		userRef = rootRef.child("users-ke").child(authData.uid);
+		userRef = rootRef.child("users-ke-2018").child(authData.uid);
 		userRef.once('value', function(snapshot) {
 			var user = snapshot.val();
-			userRef = rootRef.child("users-ke").child(authData.uid);
+			userRef = rootRef.child("users-ke-2018").child(authData.uid);
 			if (!user) {
 				userRef.set({
 					provider: authData.provider,
