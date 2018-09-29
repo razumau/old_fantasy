@@ -95,7 +95,7 @@ body {
 	margin-bottom: 10px;
 }
 
-.list-group-item {
+.list-group-item > span:nth-child(1) {
 	padding-right: 15px;
 }
 
