@@ -96,7 +96,7 @@ body {
 }
 
 .list-group-item > span:nth-child(1) {
-	padding-right: 15px;
+	padding-right: 25px;
 }
 
 .userBox p {
@@ -142,6 +142,7 @@ td.bs-checkbox {
 	border-radius: 0;
 	font-size: 14px;
 	padding: 7px 7px;
+    transform: translateY(-50%);
 }
 
 #loginButtons h3 {
