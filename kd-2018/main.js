@@ -142,10 +142,10 @@ var actions = {
 function authCallback(authData) {
 	if (authData) {
 		hideLoginButtons();
-		userRef = rootRef.child("users-ke-2018").child(authData.uid);
+		userRef = rootRef.child("users-kd-2018").child(authData.uid);
 		userRef.once('value', function(snapshot) {
 			var user = snapshot.val();
-			userRef = rootRef.child("users-ke-2018").child(authData.uid);
+			userRef = rootRef.child("users-kd-2018").child(authData.uid);
 			if (!user) {
 				userRef.set({
 					provider: authData.provider,
@@ -200,7 +200,7 @@ function hideTable () {
 function showTable() {
 	$table.bootstrapTable({
 		method: 'get',
-		url: 'https://popping-inferno-4625.firebaseio.com/teams-ke-2018.json',
+		url: 'https://popping-inferno-4625.firebaseio.com/teams-kd-2018.json',
 		cache: false,
 		clickToSelect: true,
 		columns: [{
