@@ -8,11 +8,11 @@ var config = {
 };
 firebase.initializeApp(config);
 var db = firebase.database();
-var users = db.ref("users-ochvr-2019");
+var users = db.ref("users-schr-2019");
 
 var teams = {};
 
-$.getJSON("https://popping-inferno-4625.firebaseio.com/teams-ochvr-2019.json", function (list) {
+$.getJSON("https://popping-inferno-4625.firebaseio.com/teams-schr-2019.json", function (list) {
     for (var key in list) {
         var t = list[key];
         teams[t.name] = {name: t.name, index: t.id, points: t.points, price: t.price};
@@ -31,15 +31,16 @@ $.getJSON("https://popping-inferno-4625.firebaseio.com/teams-ochvr-2019.json", f
                     user.teams.push(teams[t]);
 
                 }
-            }
 
-            try {
-                userSnap.ref.set(user);
-            } catch (error) {
-                console.log(error);
-                console.log(user);
-            }
 
+                try {
+                    userSnap.ref.set(user);
+                } catch (error) {
+                    console.log(error);
+                    console.log(user);
+                }
+
+            }
         });
     });
     console.log('converted')
