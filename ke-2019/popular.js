@@ -11,12 +11,10 @@ $.getJSON("https://popping-inferno-4625.firebaseio.com/users-ke-2019.json")
             }
 
             for (var key in users) {
-                // debugger;
                 var user = users[key];
                 if (user.teams && user.teams.length > 0) {
                     users_count += 1;
                     user.teams.forEach(function (team) {
-                        // debugger;
                         teams_counter[team.name] += 1;
                     });
 
@@ -50,7 +48,6 @@ var List = React.createClass({
         var teams = [];
         for (var i = 0; i < this.props.teams.length; i++) {
             this.props.teams[i].place = i + 1;
-            // debugger;
             teams.push(React.createElement(Team, {team: this.props.teams[i]}));
         }
         return (
