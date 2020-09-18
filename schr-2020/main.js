@@ -130,12 +130,6 @@ var UserBox = React.createClass({
                     React.createElement("p", null, "Не больше пяти команд."),
                     React.createElement("p", null, "Результат — сумма ответов команд."),
                     React.createElement("p", null, "Изменения можно делать до 9:00 19 сентября."),
-                    React.createElement("p", {id: "ratingLink"},
-                        React.createElement("a", {
-                            href: "https://rating.chgk.info/tournament/5386",
-                            id: "ratingLink",
-                            target: "_blank"
-                        }, "Составы есть в рейтинге.")),
                     React.createElement("div", {id: "selectionsLinkRules"},
                         React.createElement("a", {
                             href: "https://fantasy.razumau.net/schr-2020/results",
