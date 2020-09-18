@@ -117,7 +117,7 @@ var UserBox = React.createClass({
                     React.createElement("div", null, React.createElement("div", {className: "list-group"}, teams), " "),
                     React.createElement("div", {id: "selectionsLinkTeams"},
                         React.createElement("a", {
-                            href: "https://fantasy.razumau.net/schr-2019/results",
+                            href: "https://fantasy.razumau.net/schr-2020/results",
                             id: "selectionsLink"
                         }, "Кого выбрали другие?"))
                 )
