@@ -4,3 +4,4 @@ _site
 schrb/_site
 chr/_site
 *.sublime-workspace
+.DS_Store
