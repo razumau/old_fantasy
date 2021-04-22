@@ -21,14 +21,7 @@ function getUiConfig() {
                 provider: firebase.auth.GoogleAuthProvider.PROVIDER_ID,
                 authMethod: 'https://accounts.google.com',
                 clientId: CLIENT_ID
-            },
-            {
-                provider: firebase.auth.FacebookAuthProvider.PROVIDER_ID,
-                scopes: [
-                    'public_profile',
-                    'email'
-                ]
-            },
+            },,
             firebase.auth.TwitterAuthProvider.PROVIDER_ID
         ],
         'tosUrl': 'https://www.google.com',
