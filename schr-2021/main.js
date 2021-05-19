@@ -2,8 +2,8 @@ var $table = $('#allTeams');
 var MAX_TEAMS_PER_USER = 5;
 var SHORT_TIMEOUT = 5000;
 var LONG_TIMEOUT = 10000;
-var MAX_POINTS = 190;
-var USERS = "users-schb-2021";
+var MAX_POINTS = 200;
+var USERS = "users-schr-2021";
 var userRef;
 
 
@@ -21,7 +21,7 @@ function getUiConfig() {
                 provider: firebase.auth.GoogleAuthProvider.PROVIDER_ID,
                 authMethod: 'https://accounts.google.com',
                 clientId: CLIENT_ID
-            },
+            },,
             firebase.auth.TwitterAuthProvider.PROVIDER_ID
         ],
         'tosUrl': 'https://www.google.com',
@@ -110,7 +110,7 @@ var UserBox = React.createClass({
                     React.createElement("div", null, React.createElement("div", {className: "list-group"}, teams), " "),
                     React.createElement("div", {id: "selectionsLinkTeams"},
                         React.createElement("a", {
-                            href: "https://fantasy.razumau.net/schb-2021/results",
+                            href: "https://fantasy.razumau.net/schr-2021/results",
                             id: "selectionsLink"
                         }, "Кого выбрали другие?"))
                 )
@@ -125,7 +125,7 @@ var UserBox = React.createClass({
                     React.createElement("p", null, "Изменения можно делать до 9:00 22 мая."),
                     React.createElement("div", {id: "selectionsLinkRules"},
                         React.createElement("a", {
-                            href: "https://fantasy.razumau.net/schb-2021/results",
+                            href: "https://fantasy.razumau.net/schr-2021/results",
                             id: "selectionsLink"
                         }, "Кого выбрали другие?"))
                 )
@@ -192,7 +192,7 @@ function hideTable() {
 function showTable() {
     $table.bootstrapTable({
         method: 'get',
-        url: 'https://popping-inferno-4625.firebaseio.com/teams-schb-2021.json',
+        url: 'https://popping-inferno-4625.firebaseio.com/teams-schr-2021.json',
         cache: false,
         clickToSelect: true,
         columns: [{
