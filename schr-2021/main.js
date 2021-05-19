@@ -122,7 +122,7 @@ var UserBox = React.createClass({
                     React.createElement("div", {id: "remainingPoints"}, this.state.user.remains),
                     React.createElement("p", null, "Не больше пяти команд."),
                     React.createElement("p", null, "Результат — сумма ответов команд."),
-                    React.createElement("p", null, "Изменения можно делать до 9:00 22 мая."),
+                    React.createElement("p", null, "Изменения можно делать до 12:00 22 мая."),
                     React.createElement("div", {id: "selectionsLinkRules"},
                         React.createElement("a", {
                             href: "https://fantasy.razumau.net/schr-2021/results",
