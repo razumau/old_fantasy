@@ -2,8 +2,8 @@ var $table = $('#allTeams');
 var MAX_TEAMS_PER_USER = 5;
 var SHORT_TIMEOUT = 5000;
 var LONG_TIMEOUT = 10000;
-var MAX_POINTS = 175;
-var USERS = "users-shchb-2022";
+var MAX_POINTS = 200;
+var USERS = "users-shchr-2022";
 var userRef;
 
 
@@ -110,7 +110,7 @@ var UserBox = React.createClass({
                     React.createElement("div", null, React.createElement("div", {className: "list-group"}, teams), " "),
                     React.createElement("div", {id: "selectionsLinkTeams"},
                         React.createElement("a", {
-                            href: "https://fantasy.razumau.net/shchb-2022/results",
+                            href: "https://fantasy.razumau.net/shchr-2022/results",
                             id: "selectionsLink"
                         }, "Кого выбрали другие?"))
                 )
@@ -122,10 +122,10 @@ var UserBox = React.createClass({
                     React.createElement("div", {id: "remainingPoints"}, this.state.user.remains),
                     React.createElement("p", null, "Не больше пяти команд."),
                     React.createElement("p", null, "Результат — сумма ответов команд."),
-                    React.createElement("p", null, "Изменения можно делать до 9:00 9 апреля."),
+                    React.createElement("p", null, "Изменения можно делать до 9:00 1 мая."),
                     React.createElement("div", {id: "selectionsLinkRules"},
                         React.createElement("a", {
-                            href: "https://fantasy.razumau.net/shchb-2022/results",
+                            href: "https://fantasy.razumau.net/shchr-2022/results",
                             id: "selectionsLink"
                         }, "Кого выбрали другие?"))
                 )
@@ -192,7 +192,7 @@ function hideTable() {
 function showTable() {
     $table.bootstrapTable({
         method: 'get',
-        url: 'https://popping-inferno-4625.firebaseio.com/teams-shchb-2022.json',
+        url: 'https://popping-inferno-4625.firebaseio.com/teams-shchr-2022.json',
         cache: false,
         clickToSelect: true,
         columns: [{

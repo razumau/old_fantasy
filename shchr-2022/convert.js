@@ -8,11 +8,11 @@ var config = {
 };
 firebase.initializeApp(config);
 var db = firebase.database();
-var users = db.ref("users-shchb-2022");
+var users = db.ref("users-shchr-2022");
 
 var teams = {};
 
-$.getJSON("https://popping-inferno-4625.firebaseio.com/teams-shchb-2022.json", function (list) {
+$.getJSON("https://popping-inferno-4625.firebaseio.com/teams-shchr-2022.json", function (list) {
     for (var key in list) {
         var t = list[key];
         teams[t.name] = {name: t.name, index: t.id, points: t.points, price: t.price};

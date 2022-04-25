@@ -1,7 +1,7 @@
 var users = [];
-var MAX_POINTS = 175;
+var MAX_POINTS = 200;
 
-$.getJSON("https://popping-inferno-4625.firebaseio.com/users-shchb-2022.json", function (list) {
+$.getJSON("https://popping-inferno-4625.firebaseio.com/users-shchr-2022.json", function (list) {
 	for (var key in list) {
 		var user = list[key];
 		if (user.remains < MAX_POINTS && user.teams) {
