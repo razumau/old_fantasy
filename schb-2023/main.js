@@ -2,7 +2,7 @@ var $table = $('#allTeams');
 var MAX_TEAMS_PER_USER = 5;
 var SHORT_TIMEOUT = 5000;
 var LONG_TIMEOUT = 10000;
-var MAX_POINTS = 190;
+var MAX_POINTS = 180;
 var USERS = "users-schb-2023";
 var userRef;
 
