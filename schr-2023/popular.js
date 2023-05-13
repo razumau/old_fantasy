@@ -1,8 +1,8 @@
 var result = [];
 
-$.getJSON("https://popping-inferno-4625.firebaseio.com/users-schr-2022.json")
+$.getJSON("https://popping-inferno-4625.firebaseio.com/users-schr-2023.json")
     .then(function (users) {
-        $.getJSON("https://popping-inferno-4625.firebaseio.com/teams-schr-2022.json", function (teams) {
+        $.getJSON("https://popping-inferno-4625.firebaseio.com/teams-schr-2023.json", function (teams) {
             var teams_counter = {};
             var users_count = 0;
 
