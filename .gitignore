@@ -5,3 +5,6 @@ schrb/_site
 chr/_site
 *.sublime-workspace
 .DS_Store
+*.json
+*.csv
+*.txt
